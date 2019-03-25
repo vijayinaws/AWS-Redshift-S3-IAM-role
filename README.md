@@ -140,9 +140,6 @@ terraform destroy -var-file="dev.tfvars
 
 # OUTPUT:
 ~~~
- Apply complete! Resources: 9 added, 1 changed, 0 destroyed.
- Outputs:
-
 iam_role_arn = [
     arn:aws:iam::031479821455:role/redshift_role
 ]
