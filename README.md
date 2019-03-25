@@ -118,29 +118,31 @@ All other variables in the project are used to specify new resources.
 
 
 # execution steps: 
-
+~~~
 
 terraform init
 terraform plan -var-file="dev.tfvars"
 terraform apply -var-file="dev.tfvars"
 terraform destroy -var-file="dev.tfvars
+~~~
 
 # Modules
  * S3 
+    * main - Creates base Terraform code for s3 buckets.
 
  * redshift
-    * main - terraform base code to create redshift cluster, subnet group and iam role with allow read/write to s3 policy
+    * main -  Creates base Terraform code for redshift cluster, subnet group and iam role with allow read/write to s3 policy
 
  * security_groups
-     * main - base terraform code to create security_group with inbound/outbound rules
+     * main - Creates base Terraform code for security_group with inbound/outbound rules.
 
  * existing_vpc
-     * main - base terraform code to use existing vpc and subnet details
+     * main - Creates base Terraform code to use existing vpc and subnet details.
 
 # OUTPUT:
-Apply complete! Resources: 9 added, 1 changed, 0 destroyed.
-
-Outputs:
+~~~
+ Apply complete! Resources: 9 added, 1 changed, 0 destroyed.
+ Outputs:
 
 iam_role_arn = [
     arn:aws:iam::031479821455:role/redshift_role
@@ -154,5 +156,6 @@ s3 = [
 sg_info = {
   redshift-sg = sg-0fd86e255d6cf7b24
 }
+~~~
 
 
