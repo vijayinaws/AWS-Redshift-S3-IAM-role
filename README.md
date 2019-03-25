@@ -57,6 +57,11 @@ The following list of variables are required for all infrastructure builds:
 
 
 * **aws_region**: The AWS Region to launch infrastructure into
+* **s3_bucket**: "bucket name to add into redshift_iam_role_policy"
+* Global_Tags
+* **owner** : "email_id"
+* **environment**: "dev/stage/prod"
+* **Charge_Code** : "1234"
 
 
 
