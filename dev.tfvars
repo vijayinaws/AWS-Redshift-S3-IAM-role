@@ -1,20 +1,17 @@
 
 
-
-#enter region for deployment
+# enter region for deployment
 aws_region = "us-east-1"
 
 # bucket name to add into redshift_iam_role_policy
 s3_bucket = "us-east-1-dev-test-example"
 
-#Tags
+# Global_Tags
 owner = "email_id"
 environment = "dev_vpc"
 Charge_Code = "1234"
 
-
-
-
+# ## Enter existing vpc details.
 existing_vpc = [
   {
     vpc_name   = "vpc-non_prod"
@@ -32,6 +29,7 @@ existing_subnets = [
     subnet_id                = "subnet-fb4893a7"
     subnet_name              = "sub-non_prod-pub"
   },
+
 ]
 ## Enter the details to create NEW security group details. add more code blocks to create additional security groups, copy the code block from { till } (including {}) and enter the details. Seperate the each code block with comman (,)
 
@@ -41,6 +39,18 @@ security_groups = [
     vpc         = "vpc-non_prod"
     description = "Security Group for Load Balancers"
   },
+  /*
+  {
+    name        = "tes-sg-1"
+    vpc         = "vpc-non_prod"
+    description = "Security Group for Load Balancers"
+  }, */
+  /*
+  {
+    name        = "tes-sg-2"
+    vpc         = "vpc-non_prod"
+    description = "Security Group for Load Balancers"
+  }, */
 ]
 
 ## Enter the details to create security group rules, each rule should be in new code block. To add more code blocks, copy the code block from { till } (including {}) and enter the details. Seperate the each code block with comman (,)
@@ -61,9 +71,11 @@ cidr_ref_rules = [
     description = "outbound to Internet"
     to_port     = "0"
     from_port   = "0"
-    cidr        = "0.0.0.0/0"
+    cidr        = "ip1|ip2|ip3|ip4...."
   },
 ]
+#for example
+# cidr        = "|10.135.184.0/21|10.135.176.0/21|10.135.160.0/21|10.135.8.0/21|142.11.128.0/24"
 sg_ref_rules = [
   {
     sg_name     = "redshift-sg"
@@ -75,6 +87,16 @@ sg_ref_rules = [
     source_sg   = "redshift-sg"
     description = "Allow TCP traffic from test-cet"
   },
+  /*{
+    sg_name     = "test-sg-1"
+    direction   = "ingress"
+    protocol    = "-1"
+    description = "Inbound from Internet"
+    to_port     = "0"
+    from_port   = "65535"
+    source_sg   = "test-sg-1"
+    description = "Allow TCP traffic from test-sg-1"
+  }, */
 ]
 
 ## Enter details to create S3 buckets, each bucket should be in new code block. To add more code blocks, copy the code block from { till } (including {}) and enter the details. Seperate the each code block with comman (,)
@@ -85,6 +107,16 @@ buckets = [
      versioning = "True"
      force_destroy = "True" 
    },
+   /*{
+     name       = "test-bucket-example-1"
+     versioning = "True"
+     force_destroy = "True" 
+   }, */
+   /*{
+     name       = "test-bucket-example-2"
+     versioning = "True"
+     force_destroy = "True" 
+   }, */
  ]
 
 ## Enter details to create Redshift , each Redshift should be in new code block. To add more code blocks, copy the code block from { till } (including {}) and enter the details. Seperate the each code block with comman (,)
