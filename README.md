@@ -114,8 +114,6 @@ All other variables in the project are used to specify new resources.
 * **redshift_clusters**: creates redshift clusters
 * **redshift_subnet_groups**: creates subnet groups for redshift clusters
 
-> Note: The "tags" variables are used to apply additional tags that are desired at a global or a respirce specific level. These maps are merged into each other where the most specific tag will take precedence. For example, if the `global_tags` and `ec2_tags` variables both define the same key, the value from the `ec2_tags` map will be used. All mandatory tag variables, such as `business_unit`, take ultimate precidence and cannot be overwritten.
-
 
 # execution steps: 
 ~~~
