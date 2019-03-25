@@ -4,10 +4,6 @@ This project is unique in that it provides the ability to build any number of re
 The Terraform code in this project is written in a way that it can service all environments for all project builds, without the need to modify any of the code within this project. 
 All resource specification and customization is done purely through variables files.
 
-**Table of Contents**
-1.  - How to structure team repositories
-    1. [Terraform VariablesFiles](#terraform-vars) - How to build variables files.
-
 ## Application Team Repositories
 
 Each application should contain a Terraform variables file (tfvars) for each environment build.
