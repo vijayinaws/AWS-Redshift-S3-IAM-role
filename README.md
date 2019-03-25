@@ -57,7 +57,7 @@ example
 #### Required Variables
 The following list of variables are required for all infrastructure builds:
 
-* **aws_account_id**: Specifies the AWS Account ID of the McDonald's AWS account to launch infrastructure into
+
 * **aws_region**: The AWS Region to launch infrastructure into
 
 
